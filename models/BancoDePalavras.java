@@ -1,3 +1,5 @@
+package models;
+
 public class BancoDePalavras
 {
     private static String[] palavras = 
@@ -23,7 +25,7 @@ public class BancoDePalavras
         try
         {
             palavra =
-            new Palavra (BancoDePalavras.palavras[
+            new Palavra(BancoDePalavras.palavras[
             (int)(Math.random() * BancoDePalavras.palavras.length)]);
         }
         catch (Exception e)

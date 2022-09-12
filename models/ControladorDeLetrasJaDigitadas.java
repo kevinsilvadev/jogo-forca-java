@@ -1,3 +1,5 @@
+package models;
+
 public class ControladorDeLetrasJaDigitadas implements Cloneable
 {
     private String letrasJaDigitadas;
@@ -17,7 +19,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public void registre (char letra) throws Exception
     {
 		// verifica se a letra fornecida ja foi digitada (pode usar
-		// o método this.isJaDigitada, para isso), lancando uma exceção
+		// o mï¿½todo this.isJaDigitada, para isso), lancando uma exceï¿½ï¿½o
 		// em caso afirmativo.
 		// concatena a letra fornecida a this.letrasJaDigitadas.
     }
@@ -25,12 +27,12 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public String toString ()
     {
 		// retorna um String com TODAS as letras presentes em
-		// this.letrasJaDigitadas separadas por vírgula (,).
+		// this.letrasJaDigitadas separadas por vï¿½rgula (,).
     }
 
     public boolean equals (Object obj)
     {
-        // verificar se this e obj são iguais
+        // verificar se this e obj sï¿½o iguais
     }
 
     public int hashCode ()
@@ -40,13 +42,13 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 
     public ControladorDeLetrasJaDigitadas(
     ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
-    throws Exception // construtor de cópia
+    throws Exception // construtor de cï¿½pia
     {
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
     }
 
     public Object clone ()
     {
-        // criar uma cópia do this com o construtor de cópia e retornar
+        // criar uma cï¿½pia do this com o construtor de cï¿½pia e retornar
     }
 }

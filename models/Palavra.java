@@ -1,3 +1,5 @@
+package models;
+
 public class Palavra implements Comparable<Palavra>
 {
     private String texto;

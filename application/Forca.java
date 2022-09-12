@@ -1,4 +1,6 @@
-import java.io.*;
+package application;
+
+import models.*;
 
 public class Forca
 {
@@ -34,7 +36,7 @@ public class Forca
 			while (tracinhos.isAindaComTracinhos() &&
 				  !controladorDeErros.isAtingidoMaximoDeErros())
 			{
-				System.out.println ("Palavra...: "+tracinhos);
+				System.out.println ("models.Palavra...: "+tracinhos);
 				System.out.println ("Digitadas.: "+controladorDeLetrasJaDigitadas);
 				System.out.println ("Erros.....: "+controladorDeErros);
 
