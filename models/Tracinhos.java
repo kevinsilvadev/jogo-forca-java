@@ -1,5 +1,5 @@
 package models;
-
+/*
 public class Tracinhos implements Cloneable
 {
     private char texto [];
@@ -57,3 +57,4 @@ public class Tracinhos implements Cloneable
         // retornar uma copia de this
     }
 }
+*/
