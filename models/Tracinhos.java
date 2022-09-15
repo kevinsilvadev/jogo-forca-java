@@ -26,6 +26,7 @@ public class Tracinhos implements Cloneable
         // foram todos substituidos por letras; retornar true
         // caso ainda reste algum underline, ou false caso
         // contrario
+        return true;
     }
 
     public String toString ()
@@ -33,17 +34,20 @@ public class Tracinhos implements Cloneable
         // retorna um String com TODOS os caracteres que h�
         // no vetor this.texto, intercalados com espa�os em
         // branco
+        return "";
     }
 
     public boolean equals (Object obj)
     {
         // verificar se this e obj possuem o mesmo conte�do, retornando
         // true no caso afirmativo ou false no caso negativo
+        return true;
     }
 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        return 0;
     }
 
     public Tracinhos (Tracinhos t) throws Exception // construtor de c�pia
@@ -55,5 +59,6 @@ public class Tracinhos implements Cloneable
     public Object clone ()
     {
         // retornar uma copia de this
+        return true;
     }
 }
