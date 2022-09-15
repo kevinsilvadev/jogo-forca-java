@@ -1,5 +1,6 @@
 package models;
 
+/*
 public class ControladorDeLetrasJaDigitadas implements Cloneable
 {
     private String letrasJaDigitadas;
@@ -57,3 +58,4 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         return true;
     }
 }
+*/

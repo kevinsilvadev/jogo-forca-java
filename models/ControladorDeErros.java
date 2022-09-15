@@ -1,5 +1,6 @@
 package models;
 
+/*
 public class ControladorDeErros implements Cloneable
 {
     private int qtdMax, qtdErr=3;
@@ -81,3 +82,4 @@ public class ControladorDeErros implements Cloneable
         return true;
     }
 }
+*/
