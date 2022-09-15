@@ -14,9 +14,9 @@ public class Palavra implements Comparable<Palavra>
             throw new Exception("Digite uma letra");
         }
         this.texto = texto;
-		// verifica se o texto recebido � nulo ou ent�o vazio,
-		// ou seja, sem nenhum caractere, lan�ando exce��o.
-		// armazena o texto recebido em this.texto.
+        // verifica se o texto recebido � nulo ou ent�o vazio,
+        // ou seja, sem nenhum caractere, lan�ando exce��o.
+        // armazena o texto recebido em this.texto.
     }
 
     public int getQuantidade (char letra)
@@ -36,9 +36,6 @@ public class Palavra implements Comparable<Palavra>
     /*
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
     {
-
-
-
         // se i==0, retorna a posicao em que ocorre a primeira
         // aparicao de letra fornecida em this.texto;
         // se i==1, retorna a posicao em que ocorre a segunda
@@ -72,7 +69,6 @@ public class Palavra implements Comparable<Palavra>
                 .equals(texto, palavra.texto);
         // verificar se this e obj possuem o mesmo conte�do, retornando
         // true no caso afirmativo ou false no caso negativo
-        return true;
     }
 
     public int hashCode ()
@@ -82,7 +78,6 @@ public class Palavra implements Comparable<Palavra>
         if(ret < 0) ret =- ret;
         return ret;
         // calcular e retornar o hashcode de this
-        return 0;
     }
 
     public int compareTo (Palavra palavra)

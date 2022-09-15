@@ -1,6 +1,5 @@
 package models;
 
-/*
 public class ControladorDeErros implements Cloneable
 {
     private int qtdMax, qtdErr=3;
@@ -16,9 +15,9 @@ public class ControladorDeErros implements Cloneable
         } else {
             System.out.println("A quantidade máxima de erros não pode ser negativa");
         }
-            // verifica se qtdMax fornecida n�o � positiva, lan�ando
-            // uma exce��o.
-            // armazena qtdMax fornecida em this.qtdMax.
+        // verifica se qtdMax fornecida n�o � positiva, lan�ando
+        // uma exce��o.
+        // armazena qtdMax fornecida em this.qtdMax.
     }
 
     public void registreUmErro () throws Exception
@@ -82,4 +81,3 @@ public class ControladorDeErros implements Cloneable
         return true;
     }
 }
-*/
