@@ -1,6 +1,5 @@
 package application;
 
-import com.sun.deploy.config.Platform;
 import models.Palavra;
 
 public class TestePalavra {

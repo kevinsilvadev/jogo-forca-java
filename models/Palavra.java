@@ -33,19 +33,13 @@ public class Palavra implements Comparable<Palavra>
         // quantas letras existem nele iguais a letra fornecida
     }
 
-    /*
+
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
     {
-        // se i==0, retorna a posicao em que ocorre a primeira
-        // aparicao de letra fornecida em this.texto;
-        // se i==1, retorna a posicao em que ocorre a segunda
-        // aparicao de letra fornecida em this.texto;
-        // se i==2, retorna a posicao em que ocorre a terceira
-        // aparicao de letra fornecida em this.texto;
-        // e assim por diante.
-        // lan�ar excecao caso nao encontre em this.texto
-        // a I�zima apari��o da letra fornecida.
-    }*/
+      if(this.texto.charAt(i) == letra)
+          return i;
+      else throw new Exception("A letra informada não foi encontrada no vetor");
+    }
 
     public int getTamanho ()
     {
