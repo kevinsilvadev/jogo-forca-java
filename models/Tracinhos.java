@@ -13,7 +13,7 @@ public class Tracinhos implements Cloneable
             throw new Exception("Digite uma quantidade positiva");
         }
         this.texto = new char[qtd];
-        for(int i = 0; i < texto.length; i++){
+        for(int i = 0; i < qtd; i++){
             texto[i] = '_';
         }
 
@@ -26,15 +26,12 @@ public class Tracinhos implements Cloneable
 
     public void revele (int posicao, char letra) throws Exception
     {
-        for(int i = 0; i < texto.length; i++) {
-            if(posicao < 0) {
-                throw new Exception("A posição digitada está negativa");
-            } else if(this.texto.length >= posicao) {
-                throw new Exception("A posição é maior ou igual a que está no vetor de texto");
-            }
-            texto[posicao] = letra;
-            System.out.println(texto);
+        if(posicao < 0 || posicao >= this.texto.length) {
+            throw new Exception("A posição digitada está negativa");
         }
+        texto[posicao] = letra;
+        System.out.println(texto);
+
 
 		// verifica se posicao � negativa ou ent�o igual ou maior
 		// do que this.texto.length, lan�ando uma exce��o.
@@ -57,9 +54,9 @@ public class Tracinhos implements Cloneable
 
     public String toString ()
     {
-        String retTracinhos = null;
+        String retTracinhos = "";
         for (int i = 0; i < this.texto.length; i++)
-            retTracinhos = this.texto[i] + " ";
+            retTracinhos += this.texto[i] + " ";
         return retTracinhos;
         // retorna um String com TODOS os caracteres que h�
         // no vetor this.texto, intercalados com espa�os em

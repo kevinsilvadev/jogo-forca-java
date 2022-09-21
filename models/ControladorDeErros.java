@@ -1,20 +1,23 @@
 package models;
 
+import java.util.Objects;
+
 public class ControladorDeErros implements Cloneable
 {
-    private int qtdMax, qtdErr=3;
+    private int qtdMax, qtdErr=0;
 
     public ControladorDeErros (int qtdMax) throws Exception
     {
-        if (qtdMax > 0) {
-            try {
+        try {
+            if(qtdMax < 0) {
+                throw new Exception("A quantidade máxima de erros não pode ser negativa");
+            } else {
                 this.qtdMax = qtdMax;
-            } catch (Exception erro) {
-                System.err.println(erro.getMessage());
             }
-        } else {
-            System.out.println("A quantidade máxima de erros não pode ser negativa");
+        } catch (Exception erro) {
+            System.err.println(erro.getMessage());
         }
+
         // verifica se qtdMax fornecida n�o � positiva, lan�ando
         // uma exce��o.
         // armazena qtdMax fornecida em this.qtdMax.
@@ -24,7 +27,7 @@ public class ControladorDeErros implements Cloneable
     {
         if (this.qtdErr == this.qtdMax){
             try {
-                System.out.println("Quantidade de erros igual ao máximo permitido");
+                throw new Exception("Quantidade de erros igual ao máximo permitido");
             }catch (Exception erro){
                 System.err.println(erro.getMessage());
             }
@@ -59,25 +62,40 @@ public class ControladorDeErros implements Cloneable
 
     public boolean equals (Object obj)
     {
-        return true;
+        if (this == obj){
+            return true;
+        } else if (obj == null) {
+            return false;
+        }
+        ControladorDeErros erros = (ControladorDeErros) obj;
+        return qtdMax == erros.qtdMax && qtdErr == erros.qtdErr;
+
         // verificar se this e obj possuem o mesmo conte�do, retornando
         // true no caso afirmativo ou false no caso negativo
     }
 
     public int hashCode ()
     {
+        return Objects.hash(qtdMax, qtdErr);
         // calcular e retornar o hashcode de this
-        return 0;
     }
 
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de c�pia
     {
+        c.qtdErr = this.qtdErr;
+        c.qtdMax = this.qtdMax;
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
     }
 
     public Object clone ()
     {
+        ControladorDeErros copia = null;
+        try {
+            copia = new ControladorDeErros(this);
+        } catch (Exception erro) {
+            System.err.println(erro.getMessage());
+        }
+        return copia;
         // returnar uma c�pia de this
-        return true;
     }
 }

@@ -6,13 +6,14 @@ public class TesteControladorDeErros {
 
     public static void main(String[] args) throws Exception {
 
-        ControladorDeErros erro1 = new ControladorDeErros(-1);
+
         ControladorDeErros erro2 = new ControladorDeErros(3);
         ControladorDeErros erro3 = new ControladorDeErros(5);
 
 
         // TESTE 1: Teste do método "ControladorDeErros(int qtdMax) com quantidade Maxima(-1) negativa"
         System.out.println("\nTeste 1:");
+        ControladorDeErros erro1 = new ControladorDeErros(-1);
         System.out.println(erro1);
 
 
@@ -33,10 +34,7 @@ public class TesteControladorDeErros {
         //           false
         erro3.isAtingidoMaximoDeErros();
         System.out.println(erro3.isAtingidoMaximoDeErros());
-
-
-        // TESTE 4:
-        System.out.println("\nTeste 4:");
+        
 
     }
 }

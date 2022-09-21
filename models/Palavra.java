@@ -36,9 +36,30 @@ public class Palavra implements Comparable<Palavra>
 
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
     {
-      if(this.texto.charAt(i) == letra)
-          return i;
-      else throw new Exception("A letra informada não foi encontrada no vetor");
+        // se i==0, retorna a posicao em que ocorre a primeira
+        // aparicao de letra fornecida em this.texto;
+        // se i==1, retorna a posicao em que ocorre a segunda
+        // aparicao de letra fornecida em this.texto;
+        // se i==2, retorna a posicao em que ocorre a terceira
+        // aparicao de letra fornecida em this.texto;
+        // e assim por diante.
+        // lançar excecao caso nao encontre em this.texto
+        // a Iézima aparição da letra fornecida.
+        try {
+            int qtd = this.getQuantidade(letra) - i;
+
+            for(int j = 0; j < this.texto.length(); j++) {
+                if (letra == this.texto.charAt(j)) {
+                    qtd--;
+                    if (qtd == 0) {
+                        return j;
+                    }
+                }
+            }
+        } catch (Exception erro) {
+            throw erro;
+        }
+        return -1;
     }
 
     public int getTamanho ()
