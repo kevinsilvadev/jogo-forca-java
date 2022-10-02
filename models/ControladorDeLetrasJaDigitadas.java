@@ -85,11 +85,12 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         // calcular e retornar o hashcode de this
     }
 
-    public ControladorDeLetrasJaDigitadas(
-    ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
-    throws Exception // construtor de c�pia
+    public ControladorDeLetrasJaDigitadas(ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas) throws Exception // construtor de c�pia
     {
-        controladorDeLetrasJaDigitadas.letrasJaDigitadas = this.letrasJaDigitadas;
+        if(controladorDeLetrasJaDigitadas == null) {
+            throw new Exception("controladorDeLetrasJaDigitadas não existe - null");
+        }
+        this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
     }
 
