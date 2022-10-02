@@ -37,16 +37,20 @@ public class Palavra implements Comparable<Palavra>
     {
 
         try {
-            int qtd = this
-                    .getQuantidade(letra) - i;
+            int qtd = this.getQuantidade(letra) - i;
+            if(i < 0 || !Character.isAlphabetic((letra)))
+                throw new Exception();
+            if(qtd <= 0 )
+                throw new Exception();
             for(int j = 0; j < this.texto.length(); j++) {
-                if (letra == this.texto.charAt(j)) qtd--;
+                if (letra == this.texto.charAt(j))
+                    qtd--;
                     if (qtd == 0) return j;
             }
         } catch (Exception erro) {
             throw erro;
         }
-        return -1;
+
         // se i==0, retorna a posicao em que ocorre a primeira
         // aparicao de letra fornecida em this.texto;
         // se i==1, retorna a posicao em que ocorre a segunda
@@ -57,6 +61,7 @@ public class Palavra implements Comparable<Palavra>
         // lançar excecao caso nao encontre em this.texto
         // a Iézima aparição da letra fornecida.
 
+        return -1;
     }
 
     public int getTamanho ()
