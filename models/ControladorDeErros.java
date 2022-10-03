@@ -8,15 +8,11 @@ public class ControladorDeErros implements Cloneable
 
     public ControladorDeErros (int qtdMax) throws Exception
     {
-        try {
-            if(qtdMax < 0) {
-                throw new Exception("A quantidade máxima de erros não pode ser negativa");
-            } else {
-                this.qtdMax = qtdMax;
-            }
-        } catch (Exception erro) {
-            System.err.println(erro.getMessage());
+        if(qtdMax < 0) {
+            throw new Exception("A quantidade máxima de erros invalida");
         }
+
+        this.qtdMax = qtdMax;
 
         // verifica se qtdMax fornecida n�o � positiva, lan�ando
         // uma exce��o.
@@ -25,15 +21,11 @@ public class ControladorDeErros implements Cloneable
 
     public void registreUmErro () throws Exception
     {
-        if (this.qtdErr == this.qtdMax){
-            try {
-                throw new Exception("Quantidade de erros igual ao máximo permitido");
-            }catch (Exception erro){
-                System.err.println(erro.getMessage());
-            }
-        } else {
-            this.qtdErr ++;
+        if (this.qtdErr == this.qtdMax) {
+            throw new Exception("Quantidade de erros igual ao máximo permitido");
         }
+        this.qtdErr ++;
+
         // verifica se this.qtdErr ja � igual a this.qtdMax,
         // lan�ando excecao em caso positivo ou
         // incrementando this.qtdErr em caso negativo
@@ -41,16 +33,11 @@ public class ControladorDeErros implements Cloneable
 
     public boolean isAtingidoMaximoDeErros  ()
     {
-        try {
-            if (this.qtdErr == this.qtdMax){
-                return true;
-            }else {
-                return false;
-            }
-        }catch (Exception erro){
-            System.err.println(erro.getMessage());
+        if (this.qtdErr == this.qtdMax){
+            return true;
         }
-        return true;
+        return false;
+
         // returna true se this.qtdErr for igual a this.qtdMax,
         // ou ent�o false, caso contrario.
     }
@@ -76,7 +63,13 @@ public class ControladorDeErros implements Cloneable
 
     public int hashCode ()
     {
-        return Objects.hash(qtdMax, qtdErr);
+        int ret = 777; // um numero natural >0 qualquer
+        ret = 13 * ret + new Integer(this.qtdErr).hashCode();
+        ret = 13 * ret + new Integer(this.qtdMax).hashCode();
+
+        if (ret < 0 ) ret = -ret;
+
+        return ret;
         // calcular e retornar o hashcode de this
     }
 

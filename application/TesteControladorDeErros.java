@@ -11,6 +11,8 @@ public class TesteControladorDeErros {
 
         ControladorDeErros erro2 = new ControladorDeErros(3);
         ControladorDeErros erro3 = new ControladorDeErros(5);
+        ControladorDeErros erro4 = new ControladorDeErros(0);
+
 
 
         // TESTE 1: Teste do método "ControladorDeErros(int qtdMax) com quantidade Maxima(-1) negativa"
@@ -20,11 +22,18 @@ public class TesteControladorDeErros {
             ControladorDeErros erro1 = new ControladorDeErros(-1);
             System.out.println("Foi possivel instanciar o controladorDeErros com o parametro \"qtdMax\" negativo.");
         } catch (Exception e) {
-            System.out.println("Foi possivel inst   anciar o controladorDeErros com o parametro \"qtdMax\" negativo.");
+            System.out.println("Não Foi possivel instanciar o controladorDeErros com o parametro \"qtdMax\" negativo.");
         }
 
         // TESTE 2:  Teste do método "registreUmErro()" com quantidade Maxima(3) de erros igual a quantidade de erros(3)
         System.out.println("\nTeste 2:");
+        try {
+            erro2.registreUmErro();
+            System.out.println("Quantidade de erros não é igual ao máximo permitido");
+
+        } catch (Exception e) {
+            System.out.println("Quantidade de erros igual ao máximo permitido");
+        }
         erro2.registreUmErro();
         System.out.println(erro2);
         //            Teste do método "registreUmErro()" com quantidade Maxima(5) de erros maior que quantidade de erros(3)
@@ -32,14 +41,30 @@ public class TesteControladorDeErros {
         System.out.println(erro3);
 
 
-        // TESTE 3:  Tesde do método "isAtingidoMaximoDeErros()" com valores para retornar true (erro2 [qtdMax=3, qtdErr=3]) e false (erro3 [qtdMax=5, qtdErr=3])
+        // TESTE 3:  Tesde do método "isAtingidoMaximoDeErros()" com valores para retornar true (erro4 [qtdMax=0, qtdErr=0]) e false (erro2 [qtdMax=3, qtdErr=0])
         System.out.println("\nTeste 3:");
-        //           true
-        erro2.isAtingidoMaximoDeErros();
-        System.out.println(erro2.isAtingidoMaximoDeErros());
-        //           false
-        erro3.isAtingidoMaximoDeErros();
-        System.out.println(erro3.isAtingidoMaximoDeErros());
+
+        try {
+            //           true
+            erro4.isAtingidoMaximoDeErros();
+            System.out.println("Atingiu o maximo de erros");
+            System.out.println(erro4.isAtingidoMaximoDeErros());
+        } catch (Exception e) {
+            //           false
+            System.out.println("Não atingiu o maximo de erros");
+            System.out.println(erro4.isAtingidoMaximoDeErros());
+        }
+
+        try {
+            //           true
+            erro2.isAtingidoMaximoDeErros();
+            System.out.println("Não atingiu o maximo de erros");
+            System.out.println(erro2.isAtingidoMaximoDeErros());
+        } catch (Exception e) {
+            //           false
+            System.out.println("Atingiu o maximo de erros");
+            System.out.println(erro2.isAtingidoMaximoDeErros());
+        }
 
 
         System.out.println("\nTeste 4: ");
@@ -47,7 +72,7 @@ public class TesteControladorDeErros {
             ControladorDeErros ctrlDeErros = new ControladorDeErros(0);
             System.out.println("Foi possivel instanciar o controladorDeErros com o parametro \"qtdMax\" = 0.");
         } catch (Exception erro) {
-            System.err.println("Não foi possivel instanciar o controladorDeErros com o parametro \"qtdMax\" = 0.");
+            System.out.println("Não foi possivel instanciar o controladorDeErros com o parametro \"qtdMax\" = 0.");
         }
 
 
@@ -62,7 +87,7 @@ public class TesteControladorDeErros {
             System.err.println("Não foi possivel instanciar o controladorDeErros1 com o parametro \"qtdMax\" > 0.");
         }
 
-        //teste 4
+
         System.out.println("\nTeste 6: ");
         ControladorDeErros ctrlDeErros2 = null;
         try {

@@ -81,7 +81,12 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 
     public int hashCode ()
     {
-        return Objects.hash(letrasJaDigitadas);
+        int ret = 777; // um numero natural >0 qualquer
+        ret = 13 * ret + new String(this.letrasJaDigitadas).hashCode();
+
+        if (ret < 0 ) ret = -ret;
+
+        return ret;
         // calcular e retornar o hashcode de this
     }
 
